@@ -20,10 +20,10 @@ export const getDataRequest = () => ({
       isError: true
     }
   });
-  export const addItem = (id)=>({
+  export const addItem = ({id,name,description,price})=>({
     type: ADD_ITEM,
     payload:{
-        id:id
+        id,name,description,price
     }
   })
   

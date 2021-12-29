@@ -34,22 +34,10 @@ export default function reducer(state = initState, action) {
             };
           }
           case ADD_ITEM:{
-              let flag=true
-              for(let i=0; i<state.cart.length; i++){
-                  if(state.cart[i]===action.payload.id){
-                      flag=false
-                      break
-                  }
-              }
-              if(flag){
-              saveData('cart',[...state.cart,action.payload.id])
+            saveData('cart',[...state.cart,action.payload])
               return{
-                  ...state,cart:[...state.cart,action.payload.id]
+                  ...state,cart:[...state.cart,action.payload]
               }
-            }
-            else{
-                return state
-            }
           }
           default: {
             return state;

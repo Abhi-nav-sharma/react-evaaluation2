@@ -6,9 +6,11 @@ export default function ProductsList() {
     const data= useSelector((state)=>state.data)
     const isError= useSelector((state)=>state.isError)
     const dispatch= useDispatch()
-    const handleAdd=(id)=>{
-        console.log(id)
-        const addAction= addItem(id)
+    const handleAdd=(id,name,description,price)=>{
+        const payload={
+            id,name,description,price
+        }
+        const addAction= addItem(payload)
         dispatch(addAction)
     }
     return(
@@ -25,7 +27,7 @@ export default function ProductsList() {
                             <h3>{item.name}</h3>
                             <h4>Price:{item.price}</h4>
                         </div>
-                        <button onClick={()=>handleAdd(item.id)}>Add</button>
+                        <button onClick={()=>handleAdd(item.id,item.name,item.description,item.price)}>Add</button>
                     </div>
                 )
             })}
