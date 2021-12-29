@@ -1,4 +1,4 @@
-import { GET_DATA_FAILURE, GET_DATA_REQUEST, GET_DATA_SUCCESS } from "./ActionTypes";
+import { ADD_ITEM, GET_DATA_FAILURE, GET_DATA_REQUEST, GET_DATA_SUCCESS } from "./ActionTypes";
 
 export const getDataRequest = () => ({
     type: GET_DATA_REQUEST,
@@ -20,3 +20,10 @@ export const getDataRequest = () => ({
       isError: true
     }
   });
+  export const addItem = (id)=>({
+    type: ADD_ITEM,
+    payload:{
+        id:id
+    }
+  })
+  
